@@ -56,7 +56,7 @@ df_fig1b.insert(2, 'point', y_v)
 df_fig1b_short = df_fig1b[0 : 2048 * 44]
 
 # Convert x-axis from pts to ppm
-df_fig1b_short["point"] -= df_fig1b_short["point"].sub(1024.)
+df_fig1b_short["point"] = df_fig1b_short["point"].sub(1024.)
 df_fig1b_short["point"] = df_fig1b_short["point"].mul(2994./2048.)
 df_fig1b_short["point"] = df_fig1b_short["point"].div(51.7)
 
@@ -290,5 +290,4 @@ fig1.show()
 pio.write_image(fig1, "fig1_complete.png", format="png",
                 width=1000, height=700, scale=3)
 fig1.write_html("fig1.html")
-fig1.write_html("fig1_online.html", include_plotlyjs='cdn')
 
