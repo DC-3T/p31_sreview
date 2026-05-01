@@ -290,4 +290,5 @@ fig1.show()
 pio.write_image(fig1, "fig1_complete.png", format="png",
                 width=1000, height=700, scale=3)
 fig1.write_html("fig1.html")
+fig1.write_html("fig1_online.html", include_plotlyjs='cdn')
 
