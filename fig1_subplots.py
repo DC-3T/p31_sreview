@@ -4,6 +4,7 @@ dynamic data acquired in skeletal muscle. Author: Donnie Cameron
 """
 
 import math
+import shutil
 
 import numpy as np
 import pandas as pd
@@ -286,8 +287,9 @@ fig1.update_layout(annotations=annotations)
 
 fig1.show()
 
-# Save image to png and interacitve html
+# Save image to png, interactive html, and copy to 'index' for display online
 pio.write_image(fig1, "fig1_complete.png", format="png",
                 width=1000, height=700, scale=3)
 fig1.write_html("fig1.html")
+shutil.copyfile("fig1.html", "docs/index.html")
 
